@@ -1,9 +1,9 @@
 {
   "name": "@tsnomad/medusa-integration",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "TS Nomad strategies for a Medusa application: action bindings from subscribers, REST routes, tasks on the event bus, logging through Medusa's logger, and a lazy once-per-process boot",
   "type": "module",
-  "license": "GPL-3.0-or-later",
+  "license": "MIT",
   "homepage": "https://github.com/tsnomad/medusa-integration#readme",
   "bugs": {
     "url": "https://github.com/tsnomad/medusa-integration/issues"
