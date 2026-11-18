@@ -1,0 +1,70 @@
+{
+  "name": "@tsnomad/medusa-integration",
+  "version": "0.2.0",
+  "description": "TS Nomad strategies for a Medusa application: action bindings from subscribers, REST routes, tasks on the event bus, logging through Medusa's logger, and a lazy once-per-process boot",
+  "type": "module",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/tsnomad/medusa-integration#readme",
+  "bugs": {
+    "url": "https://github.com/tsnomad/medusa-integration/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsnomad/medusa-integration.git"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepack": "npm run build",
+    "pretypecheck": "npm run build",
+    "typecheck": "tsc --noEmit -p tsconfig.typecheck.json",
+    "pretest": "npm run build",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@tsnomad/di-container": "^0.2.0",
+    "@tsnomad/event": "^0.2.0",
+    "@tsnomad/fetch": "^0.2.0",
+    "@tsnomad/http": "^0.2.0",
+    "@tsnomad/loader": "^0.1.0",
+    "@tsnomad/logger": "^0.2.0",
+    "@tsnomad/node-integration": "^0.2.0",
+    "@tsnomad/rest": "^0.2.0",
+    "@tsnomad/tasks": "^0.2.0"
+  },
+  "peerDependencies": {
+    "@medusajs/framework": "^2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@medusajs/framework": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@medusajs/types": "2.22.6",
+    "@types/express": "4.17.25",
+    "@types/node": "20.19.43",
+    "typescript": "5.9.3",
+    "vitest": "4.1.12"
+  }
+}
